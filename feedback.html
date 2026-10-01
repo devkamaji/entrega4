@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demonstração de Componentes de Feedback - ONG</title>
+  <style>
+    :root {
+      --color-primary-main: #1b4332;
+      --color-primary-light: #2d6a4f;
+      --color-secondary-main: #e07a5f;
+      --color-neutral-white: #ffffff;
+      --color-neutral-light: #f8f9fa;
+      --color-neutral-gray: #6c757d;
+      --color-neutral-dark: #212529;
+      --spacing-xs: 8px;
+      --spacing-sm: 16px;
+      --spacing-md: 24px;
+      --spacing-lg: 40px;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-neutral-light);
+      color: var(--color-neutral-dark);
+      margin: 0;
+      padding: var(--spacing-lg);
+    }
+
+    h1 {
+      color: var(--color-primary-main);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    p.subtitle {
+      color: var(--color-neutral-gray);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .card {
+      background: var(--color-neutral-white);
+      padding: var(--spacing-md);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--color-primary-light);
+      border-bottom: 2px solid var(--color-neutral-light);
+      padding-bottom: var(--spacing-xs);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 50px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    .badge-success { background-color: #d8f3dc; color: #1b4332; }
+    .badge-warning { background-color: #fff3cd; color: #856404; }
+    .badge-danger  { background-color: #f8d7da; color: #721c24; }
+
+    /* Alertas */
+    .alert {
+      padding: var(--spacing-sm);
+      border-left: 4px solid;
+      border-radius: 4px;
+      margin-bottom: var(--spacing-xs);
+      font-size: 0.95rem;
+    }
+    .alert-success { background-color: #f4f9f4; border-color: var(--color-primary-light); color: var(--color-primary-main); }
+    .alert-error   { background-color: #fdf2f2; border-color: var(--color-secondary-main); color: #58151c; }
+
+    /* Simulação de Modal estático para visualização */
+    .modal-box {
+      background: var(--color-neutral-white);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: var(--spacing-md);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .modal-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-primary-main);
+    }
+    .btn-primary {
+      background-color: var(--color-secondary-main);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: var(--spacing-xs);
+    }
+
+    /* Toast flutuante simulado na tela */
+    .toast-demo {
+      background-color: var(--color-neutral-dark);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .toast-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #40916c;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Painel de Feedback - Plataforma da ONG</h1>
+  <p class="subtitle">Demonstração visual integrada dos componentes de micro-interação, estados e avisos.</p>
+
+  <div class="section-grid">
+    <!-- Seção de Badges -->
+    <div class="card">
+      <h3>Badges (Etiquetas)</h3>
+      <p>Categorização semântica de status:</p>
+      <div>
+        <span class="badge badge-success">Em Andamento</span>
+        <span class="badge badge-warning">Urgente</span>
+        <span class="badge badge-danger">Encerrado</span>
+      </div>
+    </div>
+
+    <!-- Seção de Alertas -->
+    <div class="card">
+      <h3>Caixas de Alerta</h3>
+      <div class="alert alert-success"><strong>Sucesso:</strong> Sua doação foi registrada com êxito.</div>
+      <div class="alert alert-error"><strong>Atenção:</strong> Preencha os campos obrigatórios.</div>
+    </div>
+  </div>
+
+  <div class="section-grid">
+    <!-- Seção de Modal -->
+    <div class="card">
+      <h3>Janela Modal (Diálogo)</h3>
+      <div class="modal-box">
+        <div class="modal-title">Confirmar Participação como Voluntário?</div>
+        <p style="font-size: 0.9rem; color: #555; margin: 0 0 10px 0;">Você será alocado no projeto de apoio comunitário local.</p>
+        <button class="btn-primary">Confirmar Inscrição</button>
+      </div>
+    </div>
+
+    <!-- Seção de Toast -->
+    <div class="card">
+      <h3>Toast (Notificação Flutuante)</h3>
+      <p>Mensagem não obstrutiva de retorno:</p>
+      <div style="margin-top: 15px;">
+        <div class="toast-demo">
+          <div class="toast-dot"></div>
+          <span>Perfil atualizado com sucesso!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

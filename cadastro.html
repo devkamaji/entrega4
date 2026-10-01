@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | ONG Transformando Vidas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="logo-mark">❤</div>
+    </div>
+
+    <h1>ONG Transformando Vidas</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="cadastro.html" class="active">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-content">
+    <section class="hero-section small-hero">
+      <h2>Seja um voluntário ou apoiador</h2>
+      <p>Preencha o formulário abaixo e faça parte da nossa rede de solidariedade.</p>
+    </section>
+
+    <section class="form-section">
+      <div class="form-card">
+        <h3>Cadastro de Interessado</h3>
+
+        <form>
+          <div class="form-grid">
+            <label>
+              Nome completo
+              <input type="text" name="nome" placeholder="Digite seu nome" required />
+            </label>
+
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+            </label>
+
+            <label>
+              Telefone
+              <input type="tel" name="telefone" placeholder="(11) 99999-9999" required />
+            </label>
+
+            <label>
+              Idade
+              <input type="number" name="idade" min="12" placeholder="Ex: 22" />
+            </label>
+
+            <label>
+              Área de interesse
+              <select name="area">
+                <option value="voluntariado">Voluntariado</option>
+                <option value="doacao">Doação</option>
+                <option value="parceria">Parceria</option>
+                <option value="eventos">Eventos</option>
+              </select>
+            </label>
+
+            <label>
+              Disponibilidade
+              <select name="disponibilidade">
+                <option value="fim-de-semana">Fim de semana</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Mensagem
+            <textarea name="mensagem" rows="5" placeholder="Conte um pouco sobre sua vontade de ajudar..."></textarea>
+          </label>
+
+          <button type="submit">Enviar cadastro</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ONG Transformando Vidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

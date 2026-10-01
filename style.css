@@ -1,0 +1,259 @@
+:root {
+  --verde-escuro: #1f5f3d;
+  --verde-medio: #2d7a4f;
+  --verde-claro: #dff3e8;
+  --laranja: #f39c35;
+  --text: #1d1d1d;
+  --cinza: #f4f4f4;
+  --branco: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #f7fdf9 0%, #edf6f1 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--verde-escuro);
+  color: var(--branco);
+  padding: 1.2rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo-container {
+  margin-bottom: 0.5rem;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  font-size: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem;
+}
+
+.hero-section,
+.info-section,
+.form-card,
+.project-card {
+  background: var(--branco);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(31, 95, 61, 0.08);
+}
+
+.hero-section {
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.small-hero {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.hero-section h2,
+.info-section h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
+}
+
+.hero-section p,
+.info-section li,
+.project-card p,
+.form-card label,
+.form-card input,
+.form-card select,
+.form-card textarea,
+.project-meta {
+  font-size: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 1.5rem;
+  border-left: 6px solid var(--laranja);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.project-card h3 {
+  color: var(--verde-escuro);
+  margin-bottom: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.project-meta {
+  margin-top: 1rem;
+  color: var(--verde-medio);
+}
+
+.info-section {
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.info-section ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  width: min(900px, 100%);
+  padding: 2rem;
+}
+
+.form-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--verde-escuro);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  font-family: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(45, 122, 79, 0.2);
+  border-color: var(--verde-medio);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  margin-top: 1rem;
+}
+
+button {
+  margin-top: 1.2rem;
+  background: var(--laranja);
+  color: var(--branco);
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #df8a1f;
+}
+
+footer {
+  background: #153d2b;
+  color: var(--branco);
+  text-align: center;
+  padding: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section h2,
+  .form-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-card,
+  .form-card,
+  .hero-section,
+  .info-section {
+    padding: 1.2rem;
+  }
+}
